@@ -1,0 +1,15 @@
+# Airflow and local runtime output
+logs/
+output/
+__pycache__/
+*.pyc
+
+# Practice data
+data/
+
+# Credential files
+*.pem
+
+# Local secrets (commit a safe .env.example if needed)
+.env
+
