@@ -12,3 +12,11 @@ Apache Airflow, Apache Spark, AWS S3를 연결해 데이터 처리 워크플로�
 - Q5~Q9: Airflow 확장, XCom, Backfill, S3, 주간 파이프라인
 
 문항별 구현 내용과 실행 방법은 작업이 진행될 때 갱신합니다.
+
+## 실습 환경
+
+김병필은 Windows와 Docker Desktop에서 자동화 파이프라인을 검증했습니다.
+
+## 회고
+
+데이터엔지니어링 7기 과정에서 Git 브랜치와 병합 절차의 중요성을 배웠습니다.
