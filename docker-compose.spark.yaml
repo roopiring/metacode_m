@@ -1,0 +1,53 @@
+services:
+  spark-master:
+    image: apache/spark:3.5.7
+    container_name: week7-spark-master
+    hostname: spark-master
+    command:
+      - /opt/spark/bin/spark-class
+      - org.apache.spark.deploy.master.Master
+      - --host
+      - spark-master
+      - --port
+      - "7077"
+      - --webui-port
+      - "8080"
+    ports:
+      - "7077:7077"
+      - "8081:8080"
+    volumes:
+      - ./jobs:/opt/spark/jobs:ro
+      - ./data:/opt/spark/data:ro
+    networks:
+      - spark-standalone
+    restart: unless-stopped
+
+  spark-worker:
+    image: apache/spark:3.5.7
+    container_name: week7-spark-worker
+    hostname: spark-worker
+    command:
+      - /opt/spark/bin/spark-class
+      - org.apache.spark.deploy.worker.Worker
+      - spark://spark-master:7077
+      - --cores
+      - "2"
+      - --memory
+      - 1g
+      - --webui-port
+      - "8081"
+    ports:
+      - "8082:8081"
+    volumes:
+      - ./jobs:/opt/spark/jobs:ro
+      - ./data:/opt/spark/data:ro
+    networks:
+      - spark-standalone
+    depends_on:
+      - spark-master
+    restart: unless-stopped
+
+networks:
+  spark-standalone:
+    name: week7-spark-network
+    driver: bridge
