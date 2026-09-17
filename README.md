@@ -16,7 +16,9 @@ Apache Airflow, Apache Spark, AWS S3를 연결해 데이터 처리 워크플로�
 ## 실습 환경
 
 김병필은 Windows와 Docker Desktop에서 자동화 파이프라인을 검증했습니다.
+김병필은 Docker Compose 환경에서 Airflow와 Spark 서비스를 함께 실행했습니다.
 
 ## 회고
 
 데이터엔지니어링 7기 과정에서 Git 브랜치와 병합 절차의 중요성을 배웠습니다.
+데이터엔지니어링 7기 실습을 통해 작업 의존성과 재시도 흐름을 익혔습니다.
